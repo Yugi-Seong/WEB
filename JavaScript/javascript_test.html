@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="style.css">
+    <script src="js/custom.js"></script> -->
+    <script>
+        //header에 script가 들어갈때 적어주어야 함
+        window.onload = function(){
+            var a = document.getElementById('title') ;
+            var color1 = prompt('원하는 첫번째 색상명을 입력하세요') ;
+            var color2 = prompt('원하는 두번째 색상명을 입력하세요') ;
+            
+            //a를 클릭할 때 함수(배경색과 글자색이 바뀜)를 실행 
+        a.onclick = function(){
+            a.style.color = color1 ;
+            a.style.backgroundColor = color2 ; 
+            //alert(color1) ;
+            //alert(color2) ;
+            console.log(color1,color2) ;
+        } ;
+        //console.log(a) ; 
+        };
+     
+    </script>
+    
+</head>
+<body>
+    <h1 id="title">오늘 처음으로 자바스크립트를 공부하다</h1>
+
+
+
+     
+
+</body>
+</html>
