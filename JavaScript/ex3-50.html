@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소생성</title>
+    <style>
+        div {
+            /* position: fixed; */
+            float: left;
+            left: 100px;
+            top: 10px;
+            width: 200px;
+            height: 200px;
+            background: #718c00;
+        }
+    </style>
+    <script>
+        function createEle() {
+            var bt = document.getElementById('bt') ; //요소선택
+            var popup = setInterval(function () {
+            var div = document.createElement('div') ; //<div> 생성
+            var p = document.createElement('p') ; //<p> 생성
+            var txt = document.createTextNode('자바스크립트') ; //컨텐츠 생성 
+            p.appendChild(txt) ; //<p>자바스크립트</p>
+            div.appendChild(p) ;//<div><p>자바스크립트</p></div>
+            document.body.appendChild(div) ; //바디의 마지막 자식으로 div태그 추가 
+            
+            bt.onclick = function(){
+       
+            //setInterval(popup,2000) ;
+          clearInterval(popup) ;
+            };
+    },2000);
+};
+         addEventListener('load',createEle) ; //window.onload
+
+    </script>
+</head>
+<body>
+    <button id="bt">요소생성</button>
+    <!-- <div><p>자바스크립트</p></div> -->
+</body>
+</html>
