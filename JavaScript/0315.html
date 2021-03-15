@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mySelect {
+            height: 24px;
+            vertical-align: middle;
+        }
+        #goBtn {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <p>다음 항목에서 신차 항목을 선택해 주세요</p>
+    <select id="mySelect">
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Volvo">Volvo</option>
+    </select>
+    <button id="goBtn">이동</button>
+    <p id="demo">선택된 Audi 사이트로 이동하려면 이동 버튼을 클릭하세요</p>
+
+    <script>
+        var mySelect = document.getElementById('mySelect') ;
+        var goBtn = document.getElementById('goBtn') ;
+        var xValue ; //undefined 
+        mySelect.onchange = function(){
+            xValue = mySelect.value ;
+            //console.log(xValue) ; 
+            document.getElementById('demo').innerHTML = '선택된 ' + xValue + ' 사이트로 이동하려면 이동 버튼을 클릭하세요' ;
+
+        } ;
+        goBtn.onclick = function(){
+            var url = '' ;
+            if(xValue =='Audi')
+            {
+                url = 'http://www.audi.co.kr/' ;
+            }
+            
+            else if(xValue=='BMW')
+            {
+                 url = 'http://www.bmw.co.kr/'
+            }
+            else if(xValue == 'Mercedes')
+            {
+                url = 'http://www.mercedes-benz.co.kr/'
+            }
+            else if(xValue=='Volvo')
+            {
+                url ='http://www.https://www.volvocars.com.kr/'
+            }
+            window.open(url,'') ;
+        } ;
+        
+        
+    </script>
+
+</body>
+</html>
