@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throwbox2</title>
+    <style>
+        #wrap {
+            width: 100vw; /*브라우저 기준으로 100%사용하겠다는 의미 */
+            height: 200px; 
+            background-color: rgba(0,0,0,0.85);
+            display: inline-block;
+            position: absolute; /* 본문내용과 겹치는 작업을 원할 때 : absoulte fix position 이용*/ 
+        
+            top: -200px;
+            
+            transition: all 0.5s /*움직이는 속도*/
+        }
+        li {
+            list-style: none;
+            margin: 10px;
+            display: inline;
+        }
+        a {
+            color: white;
+            font-size: 24px;
+        }
+       #closeBtn {
+           position: absolute;
+           right: 5px;
+           top: 5px;
+       }
+       button {
+           border: 1px solid gray;
+           background-color: white;
+           height: 28px;
+       }
+       p {
+           font-size: 18px;
+           text-align: justify;
+       }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <button id="closeBtn">Close</button>
+        <ul>
+            <li><a href="http://www.naver.com">네이버</a></li>
+            <li><a href="http://www.daum.net">다 음</a></li>
+            <li><a href="http://www.google.com">구 글</a></li>
+            <li><a href="http://work.go.kr">워크넷</a></li>
+            <li><a href="http://jobkorea.co.kr">잡코리아</a></li>
+            <li><a href="http://saramin.co.kr">사람인</a></li>
+            <li><a href="http://aladin.co.kr">알라딘</a></li>
+        </ul>
+    </div>
+
+    <div id="container">
+        <button id="openBtn">Open</button>
+        <hr>
+        <h2>본문내용 A</h2>
+        <div><img src="http://placehold.it/900x350" alt="의미 없는 이미지"></div>
+        <p> simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+        <h2>본문내용 B</h2>
+        <div><img src="http://placehold.it/900x350" alt="의미 없는 이미지"></div>
+        <p> simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+
+    <script>
+        //변수정의 
+        var openBtn = document.getElementById('openBtn') ;
+        var CloseBtn = document.getElementById('closeBtn') ;
+        var wrap = document.getElementById('wrap') ;
+
+        //open 버튼 클릭시 wrap요소를 -200에서 0px으로 이동 => open 버튼을 눌렀을때 바가 나옴  
+        openBtn.onclick = function(){
+            wrap.style.top = '0px' ;
+            wrap.style.opacity = 1 ;
+        } ;
+        //close 버튼 클릭시 wrap요소를 0에서 -200으로 이동 => close 버튼을 눌렸을때 바가 들어감 
+        closeBtn.onclick = function(){
+            wrap.style.top = '-200px' ;
+            wrap.style.opacity = 0 ;
+        } ;
+
+    </script>
+
+</body>
+</html>
