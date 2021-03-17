@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab1</title>
+    <style>
+        #gnb li {
+            list-style: none;
+            display: inline-block;
+            height: 35px;
+            width: 15vw;
+            margin-left: -20px;
+            margin-right: 20px;
+            border-radius: 0 15px 0 0;
+            border: 1px solid gray;
+            letter-spacing: 0.5vw;
+            opacity: 0.5;
+        }
+        a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+        #box {
+            position: relative;
+            margin-top: -20px;
+        }
+        #box div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 95vw;
+            height: 90vh;
+            color:white;
+            display: none;
+        }
+        #box div:nth-child(1), #gnb li:nth-child(1) {
+            background-color: red;
+        }
+        #box div:nth-child(2), #gnb li:nth-child(2) {
+            background-color: green;
+        }
+        #box div:nth-child(3),#gnb li:nth-child(3) {
+            background-color: blue;
+        }
+        #box div:nth-child(1){
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="gnb">
+            <li><a href="#">tab1</a></li>
+            <li><a href="#">tab2</a></li>
+            <li><a href="#">tab3</a></li>
+        </ul>
+    </nav>
+    <div id="box">
+        <div>red</div>
+        <div>green</div>
+        <div>blue</div>
+    </div>
+    <script>
+        var gnb = document.getElementById('gnb') ;
+        var box = document.querySelectorAll('#box>div') ; //red, green, blue 등 3개를 포함함
+        //첫번째 li인 tab1클릭시
+        gnb.children[0].children[0].onclick = function(){
+            clearBox() ;
+            box[0].style.display = 'block' ;
+            gnb.children[0].style.opacity = 1 ;
+        }
+        //두번째 li인 tab2클릭시
+        gnb.children[1].children[0].onclick = function(){
+            clearBox() ; 
+            box[1].style.display = 'block' ;
+            gnb.children[1].style.opacity = 1 ;
+        } 
+        //세번째 li인 tab3클릭시
+        gnb.children[2].children[0].onclick = function(){
+            clearBox() ;
+            box[2].style.display = 'block' ;
+            gnb.children[2].style.opacity = 1 ;
+        }
+        function clearBox() {
+            for(var i=0; i<box.length;i++)
+            {
+                box[i].style.display = 'none' ;
+                gnb.children[i].style.opacity = 0.5;
+            }
+        }
+        //console.log(box) ;
+    </script>
+</body>
+</html>
